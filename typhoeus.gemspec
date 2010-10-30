@@ -9,12 +9,13 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Paul Dix"]
-  s.date = %q{2010-07-16}
+  s.date = %q{2010-10-30}
   s.description = %q{Like a modern code version of the mythical beast with 100 serpent heads, Typhoeus runs HTTP requests in parallel while cleanly encapsulating handling logic.}
   s.email = %q{paul@pauldix.net}
   s.extensions = ["ext/typhoeus/extconf.rb"]
   s.extra_rdoc_files = [
-    "README.textile"
+    "README.textile",
+     "TODO"
   ]
   s.files = [
     ".gitignore",
@@ -65,20 +66,20 @@ Gem::Specification.new do |s|
   s.homepage = %q{http://github.com/pauldix/typhoeus}
   s.rdoc_options = ["--charset=UTF-8"]
   s.require_paths = ["lib"]
-  s.rubygems_version = %q{1.3.6}
+  s.rubygems_version = %q{1.3.7}
   s.summary = %q{A library for interacting with web services (and building SOAs) at blinding speed.}
   s.test_files = [
     "spec/servers/app.rb",
      "spec/spec_helper.rb",
      "spec/typhoeus/easy_spec.rb",
+     "spec/typhoeus/remote_method_spec.rb",
+     "spec/typhoeus/response_spec.rb",
+     "spec/typhoeus/multi_spec.rb",
      "spec/typhoeus/filter_spec.rb",
      "spec/typhoeus/hydra_spec.rb",
-     "spec/typhoeus/multi_spec.rb",
-     "spec/typhoeus/remote_method_spec.rb",
      "spec/typhoeus/remote_proxy_object_spec.rb",
-     "spec/typhoeus/remote_spec.rb",
      "spec/typhoeus/request_spec.rb",
-     "spec/typhoeus/response_spec.rb",
+     "spec/typhoeus/remote_spec.rb",
      "examples/twitter.rb"
   ]
 
@@ -86,7 +87,7 @@ Gem::Specification.new do |s|
     current_version = Gem::Specification::CURRENT_SPECIFICATION_VERSION
     s.specification_version = 3
 
-    if Gem::Version.new(Gem::RubyGemsVersion) >= Gem::Version.new('1.2.0') then
+    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rack>, [">= 0"])
       s.add_development_dependency(%q<rspec>, [">= 0"])
       s.add_development_dependency(%q<jeweler>, [">= 0"])
